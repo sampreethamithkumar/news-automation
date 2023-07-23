@@ -44,3 +44,5 @@ Resources:
       Subscription:
         - Protocol: email
           Endpoint: sampreethamith65@gmail.com
+        - Protocol: email
+          Endpoint: prathikshajain54@gmail.com
