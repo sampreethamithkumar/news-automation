@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  news-api-node
+
+  SAM Template for news-api-node
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 60
+
+Parameters:
+  APIKEY:
+    Type: String
+
+
+Resources:
+  NewsFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: news-api/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          SNS_TOPIC: !Ref SNSTopic
+          API_KEY: !Ref APIKEY
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonSNSFullAccess
+      Events:
+        BusinessNewsScheduler:
+          Type: Schedule
+          Properties: 
+            Schedule: cron(30 20 * * ? *)
+
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: Morning News
+      Subscription:
+        - Protocol: email
+          Endpoint: example@example.com
