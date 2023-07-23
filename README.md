@@ -1,4 +1,4 @@
-# news-automation [![.github/workflows/sam-pipeline.yml](https://github.com/sampreethamithkumar/news-automation/actions/workflows/sam-pipeline.yml/badge.svg?branch=main)](https://github.com/sampreethamithkumar/news-automation/actions/workflows/sam-pipeline.yml)
+# news-automation [![.github/workflows/sam-pipeline.yml](https://github.com/sampreethamithkumar/news-automation/actions/workflows/sam-pipeline.yml/badge.svg)](https://github.com/sampreethamithkumar/news-automation/actions/workflows/sam-pipeline.yml)
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
