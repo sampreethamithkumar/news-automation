@@ -35,7 +35,7 @@ Resources:
         BusinessNewsScheduler:
           Type: Schedule
           Properties: 
-            Schedule: cron(30 20 * * ? *)
+            Schedule: cron(10 20 * * ? *)
 
   SNSTopic:
     Type: AWS::SNS::Topic
