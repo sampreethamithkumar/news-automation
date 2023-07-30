@@ -37,7 +37,7 @@ function emailBodyTemplate(response) {
   response["articles"].forEach((message, index) => {
     emailBody +=
       `Title: ${message.title} \n` +
-      `Author: ${message.Author} \n` +
+      `Author: ${message.author} \n` +
       `Description: ${message.description} \n` +
       `url: ${message.url} \n` +
       "\n";
